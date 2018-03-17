@@ -5,5 +5,5 @@
 - name: Copy the code from repository
   git: repo={{ repository }} dest=/var/www/html/
 
-- name: Creates the index.php file
-  template: src=index.php.j2 dest=/var/www/html/index.php
+#- name: Creates the index.php file
+ # template: src=index.php.j2 dest=/var/www/html/index.php

@@ -2,22 +2,31 @@
 # This playbook deploys the whole application stack in this site.
 
 - name: apply common configuration to all nodes
+  gather_facts: false
   hosts: all
-  remote_user: root
+  become: true
+  become_user: root
 
   roles:
     - common
+  tags: common
 
 - name: configure and deploy the webservers and application code
+  #gather_facts: false
   hosts: webservers
-  remote_user: root
+  become: true
+  become_user: root
 
   roles:
     - web
+  tags: web
 
 - name: deploy MySQL and configure the databases
+  gather_facts: false
   hosts: dbservers
-  remote_user: root
+  become: true
+  become_user: root
 
   roles:
     - db
+  tags: db
