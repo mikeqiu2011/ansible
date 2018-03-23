@@ -1,0 +1,14 @@
+---
+
+- hosts: web
+  gather_facts: false
+
+  tasks:
+  - name: touch files with an optional mode
+    file: dest={{item.path}} state=touch mode={{item.mode|default(0700)}}
+    with_items:
+     - path: /tmp/foo
+       mode: "0644"
+     - path: /tmp/bar
+     - path: /tmp/baz
+       mode: "0444"
