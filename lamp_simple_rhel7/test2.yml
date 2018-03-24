@@ -4,6 +4,8 @@
   gather_facts: false
   become: true
   become_user: root
+  vars_files: 
+    - group_vars/vault.yml  
 
   tasks:
   - name: touch files with an optional mode
