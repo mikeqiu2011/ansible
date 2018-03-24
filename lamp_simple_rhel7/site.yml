@@ -2,7 +2,7 @@
 # This playbook deploys the whole application stack in this site.
 
 - name: apply common configuration to all nodes
-  gather_facts: false
+  #gather_facts: false
   hosts: all
   become: true
   become_user: root
@@ -22,7 +22,7 @@
   tags: web
 
 - name: deploy MySQL and configure the databases
-  gather_facts: false
+  #gather_facts: false
   hosts: dbservers
   become: true
   become_user: root
