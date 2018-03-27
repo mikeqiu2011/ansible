@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat /etc/passwd | awk -F ':' '{ if($3>500 || $3==0) {print $1; }}' > /tmp/$HOSTNAME
+scp /tmp/$HOSTNAME 192.168.2.50:/tmp/
