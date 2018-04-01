@@ -1,2 +1,2 @@
-if (value == "test") puts "I'm in!"
+if (value == TEST\_CONSTANT)puts "I'm in!"
 end
