@@ -1,0 +1,4 @@
+---
+# tasks file for role-depen-slave2
+- debug:
+    msg: "from slave2: {{SLAVE2_NAME}}"

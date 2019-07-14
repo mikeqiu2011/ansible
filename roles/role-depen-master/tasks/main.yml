@@ -1,0 +1,14 @@
+---
+# tasks file for role-depen-master
+- debug:
+    msg: "from master"
+
+- name: Run tasks in role of slave1
+  import_role:
+    name: "role-depen-slave1"
+
+- name: Run tasks in role of slave2
+  import_role:
+    name: "role-depen-slave2"
+  vars:
+    SLAVE2_NAME: "agile is great"
